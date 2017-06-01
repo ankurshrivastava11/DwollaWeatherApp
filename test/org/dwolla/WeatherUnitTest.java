@@ -36,7 +36,7 @@ public class WeatherUnitTest {
 	@Test
 	public void validCity() throws Exception {
 
-		when(request.getParameter("location")).thenReturn("Chicago");
+		when(request.getParameter("location")).thenReturn("Chicago IL");
 
 		JSONObject obj = new JSONObject();
 		obj.put("main", new JSONObject().put("temp", 56.28));

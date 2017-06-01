@@ -52,7 +52,11 @@ public class Weather extends HttpServlet {
 			JSONObject resultObject = json.getJSONObject("main");
 
 			Double temp = resultObject.getDouble("temp");
-			out.println(request.getParameter("location") + " weather:");
+			String cityName = request.getParameter("location");
+			int i = cityName.indexOf(' ');
+			if (i > 0)
+				cityName = cityName.substring(0, i);
+			out.println(cityName + " weather:");
 			String tempFah = temp + " degree Fahrenheit";
 			out.println(tempFah);
 		} else {
