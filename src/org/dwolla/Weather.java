@@ -18,10 +18,10 @@ import javax.ws.rs.core.Response;
 import org.json.JSONObject;
 
 /**
- * @author ankurshrivastava
- * This servlet calls the openweathermap api and returns the data in json.
+ * @author ankurshrivastava This servlet calls the openweathermap api and
+ *         returns the data in json.
  *
- * Servlet implementation class checkWeather
+ *         Servlet implementation class checkWeather
  */
 @WebServlet("/checkWeather")
 public class Weather extends HttpServlet {
@@ -48,17 +48,12 @@ public class Weather extends HttpServlet {
 				.queryParam("APPID", "e3c9e296ad1fbea5a28f9adfd906ef2d").request().get(Response.class);
 
 		if (res.getStatus() == 200) {
-
 			JSONObject json = new JSONObject(res.readEntity(String.class));
-
 			JSONObject resultObject = json.getJSONObject("main");
 
 			Double temp = resultObject.getDouble("temp");
-
 			out.println(request.getParameter("location") + " weather:");
-
 			String tempFah = temp + " degree Fahrenheit";
-
 			out.println(tempFah);
 		} else {
 			out.println("entered city :" + request.getParameter("location") + " not found ");

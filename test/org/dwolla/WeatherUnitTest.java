@@ -16,8 +16,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 /**
- * @author ankurshrivastava
- * This is the Unit testing file for the Weather Servlet. The testing is done using jUnit and Mockito.
+ * @author ankurshrivastava This is the Unit testing file for the Weather
+ *         Servlet. The testing is done using jUnit and Mockito.
  */
 public class WeatherUnitTest {
 
@@ -32,6 +32,7 @@ public class WeatherUnitTest {
 		MockitoAnnotations.initMocks(this);
 	}
 
+	
 	@Test
 	public void validCity() throws Exception {
 
@@ -44,7 +45,6 @@ public class WeatherUnitTest {
 		PrintWriter pw = new PrintWriter(sw);
 
 		when(response.getWriter()).thenReturn(pw);
-
 		new Weather().doGet(request, response);
 
 		String result = sw.getBuffer().toString().trim();
@@ -67,10 +67,10 @@ public class WeatherUnitTest {
 		new Weather().doGet(request, response);
 
 		String result = sw.getBuffer().toString().trim();
-
+		Assert.assertFalse(result.contains("Chicago"));
 		Assert.assertFalse(result.contains("Fahrenheit"));
 	}
-	
+
 	@Test
 	public void validCityWithName() throws Exception {
 
@@ -88,5 +88,26 @@ public class WeatherUnitTest {
 
 		String result = sw.getBuffer().toString().trim();
 		Assert.assertTrue(result.contains("Chicago"));
+	}
+	
+	@Test
+	public void invalidCityWithSpecialChars() throws Exception {
+
+		when(request.getParameter("location")).thenReturn("?");
+
+		JSONObject obj = new JSONObject();
+		obj.put("main", new JSONObject().put("temp", 56.28));
+
+		StringWriter sw = new StringWriter();
+		PrintWriter pw = new PrintWriter(sw);
+
+		when(response.getWriter()).thenReturn(pw);
+
+		new Weather().doGet(request, response);
+
+		String result = sw.getBuffer().toString().trim();
+
+		Assert.assertFalse(result.contains("Chicago"));
+		Assert.assertFalse(result.contains("Fahrenheit"));
 	}
 }
