@@ -24,7 +24,7 @@
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<files>
-						<file>src/org/dwolla/dev.properties</file>
+						<file>resources/dev.properties</file>
 					</files>
 				</configuration>
 			</plugin>
