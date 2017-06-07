@@ -14,5 +14,13 @@
 			placeholder="Where are you?"><br> <input type="submit"
 			value="Check Weather">
 	</form>
+
+	<!-- <h2>Check Weather</h2>
+	<p>Enter your Location:</p>
+	<input type="text" id="location" name="location"
+		placeholder="Where are you?" required="required">
+	<input type="button" id="loginButton" value="Check Weather"> -->
 </body>
+
+<!-- <script language="JavaScript" type="text/javascript" src="js/weatherApp.js"></script> -->
 </html>

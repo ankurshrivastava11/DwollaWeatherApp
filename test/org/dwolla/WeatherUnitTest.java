@@ -4,15 +4,21 @@ import static org.mockito.Mockito.when;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 
+import org.dwolla.config.AppConfig;
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Matchers;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 /**
@@ -27,15 +33,21 @@ public class WeatherUnitTest {
 	@Mock
 	HttpServletResponse response;
 
+	@Mock
+	Properties prop;
+
+	@Mock
+	AppConfig appConfig;
+
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 	}
 
-	
 	@Test
 	public void validCity() throws Exception {
-
+		
+		when(appConfig.getWeatherApiConfig("weather.api.url")).thenReturn("http://api-weather");
 		when(request.getParameter("location")).thenReturn("Chicago IL");
 
 		JSONObject obj = new JSONObject();
@@ -48,6 +60,7 @@ public class WeatherUnitTest {
 		new Weather().doGet(request, response);
 
 		String result = sw.getBuffer().toString().trim();
+		System.out.println(result);
 		Assert.assertTrue(result.contains("Fahrenheit"));
 	}
 
@@ -89,7 +102,7 @@ public class WeatherUnitTest {
 		String result = sw.getBuffer().toString().trim();
 		Assert.assertTrue(result.contains("Chicago"));
 	}
-	
+
 	@Test
 	public void invalidCityWithSpecialChars() throws Exception {
 
