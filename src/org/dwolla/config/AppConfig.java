@@ -13,8 +13,8 @@ public class AppConfig {
 
 		try {
 			prop = new Properties();
-
-			is = getClass().getClassLoader().getResourceAsStream("dev.properties");
+			ClassLoader loader = Thread.currentThread().getContextClassLoader();
+			is = loader.getResourceAsStream("dev.properties");
 
 			if (is != null) {
 				prop.load(is);
