@@ -8,10 +8,9 @@ The application consists of two interfaces.
 How to build and run the HTML Interface:
 1. This interface is developed using <a href="https://maven.apache.org/">Maven</a>.
 2. Pull the project into the workspace.
-3. Run the project as Maven generate-resources to install the dependencies.
-4. Run the project on server.
-5. Enter the location and click on Check Weather.
-6. The result is displayed.
+3. Run the project on server.
+4. Enter the location and click on Check Weather.
+5. The result is displayed.
 
 How to build and run the Command Line Interface:
 1. Pull the project into the workspace.
@@ -30,5 +29,5 @@ How to build and run the Command Line Interface:
 </a>
 <br /> 
 <p> Travis CI Job Log </p>
-https://travis-ci.org/ankurshrivastava11/DwollaWeatherApp/jobs/240223605
+https://travis-ci.org/ankurshrivastava11/DwollaWeatherApp/jobs/240942134
 
