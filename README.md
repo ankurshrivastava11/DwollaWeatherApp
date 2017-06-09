@@ -29,5 +29,5 @@ How to build and run the Command Line Interface:
 </a>
 <br /> 
 <p> Travis CI Job Log </p>
-https://travis-ci.org/ankurshrivastava11/DwollaWeatherApp/jobs/240942134
+https://travis-ci.org/ankurshrivastava11/DwollaWeatherApp/jobs/240947423
 
