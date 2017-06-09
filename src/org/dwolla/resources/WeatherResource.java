@@ -8,6 +8,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * @author ankurshrivastava
+ * Rest Service used for checking the weather 
  *
  */
 @Path("/weather")
@@ -36,12 +37,18 @@ public WeatherResource() {
 	@Path("/cities/{cityName}")
 	@Produces({ MediaType.TEXT_PLAIN })
 	public String weatherInfo(@PathParam("cityName") String city) throws Exception {
+		String temp = weatherService.getWeatherInfo(city);
+		return temp;
+		
+		
+		
+		
+		
 //		Client client = ClientBuilder.newClient();
 //		WebTarget target = client.target("http://api.openweathermap.org/data/2.5/weather");
 //		Response res = target.queryParam("q", city).queryParam("units", "imperial")
 //				.queryParam("APPID", "e3c9e296ad1fbea5a28f9adfd906ef2d").request().get(Response.class);
-		String temp = weatherService.getWeatherInfo(city);
-		return temp;
+		
 //		StringBuilder sb = new StringBuilder();
 //
 //		if (serviceResopnse.getStatus() == 200) {

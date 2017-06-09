@@ -3,6 +3,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * @author ankurshrivastava This file is used to fetch the api and url from the
+ *         properties file.
+ *
+ */
 public class GetKey {
 	InputStream is;
 	private Properties prop;
@@ -29,9 +34,6 @@ public class GetKey {
 	}
 
 	public String getWeatherApiConfig(String key) throws IOException {
-		// get config properties
-//		AppConfig ac = new AppConfig();
-
 		Properties gk = this.getProperties();
 
 		String value = gk.getProperty(key);

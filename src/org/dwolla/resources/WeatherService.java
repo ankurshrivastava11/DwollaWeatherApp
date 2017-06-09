@@ -7,8 +7,13 @@ import javax.ws.rs.core.Response;
 import org.dwolla.config.AppConfig;
 import org.json.JSONObject;
 
+/**
+ * @author ankurshrivastava Service class for fetching the data from
+ *         openweathermap.org.
+ *
+ */
 public class WeatherService {
-	
+
 	public WeatherService() {
 		super();
 	}
@@ -20,17 +25,17 @@ public class WeatherService {
 	}
 
 	public String getWeatherInfo(String city) throws IOException {
-		
+
 		AppConfig ac = new AppConfig();
-		WeatherAPIRequest req = new WeatherAPIRequest(ac.getWeatherApiConfig("weather.api.url"), ac.getWeatherApiConfig("weather.api.key"), city, "imperial", "GET");
+		WeatherAPIRequest req = new WeatherAPIRequest(ac.getWeatherApiConfig("weather.api.url"),
+				ac.getWeatherApiConfig("weather.api.key"), city, "imperial", "GET");
 		Response res = weatherClient.executeRequest(req);
-		
+
 		StringBuilder sb = new StringBuilder();
 
 		if (res.getStatus() == 200) {
 			JSONObject json = new JSONObject(res.readEntity(String.class));
 			JSONObject resultObject = json.getJSONObject("main");
-
 			Double temp = resultObject.getDouble("temp");
 			String cityName = city;
 			int i = cityName.indexOf(' ');

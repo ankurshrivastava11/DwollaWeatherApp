@@ -7,6 +7,10 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Scanner;
 
+/**
+ * @author ankurshrivastava This file is created for displaying the result using
+ *         Command Line Interface.
+ */
 public class WeatherCommandLine {
 	private static Scanner scanner;
 	InputStream is;

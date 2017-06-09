@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Weather</title>
-	<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 			type="button" id="checkButton" value="Check Weather">
 	</div>
 	</br>
-	<div id = "div1"></div>
+	<div id="div1"></div>
 </body>
 
 <script>
