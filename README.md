@@ -24,7 +24,7 @@ How to build and run the Command Line Interface:
 
 <br /> 
 <p>Travis CI Build</p>
-<a href="https://travis-ci.org/boennemann/badges">
+<a href="https://travis-ci.org/ankurshrivastava11/DwollaWeatherApp.svg?branch=master">
 <img src="https://travis-ci.org/ankurshrivastava11/DwollaWeatherApp.svg?branch=master" style="max-width:100%;">
 </a>
 <br /> 
