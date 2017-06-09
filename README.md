@@ -15,7 +15,7 @@ How to build and run the HTML Interface:
 How to build and run the Command Line Interface:
 1. Pull the project into the workspace.
 2. Open the terminal.
-3. Go to the project path using cd /path.
+3. Go to the project path using cd /path of DwollaWeatherApp.
 3. Go to the WeatherCommandLine.java file using cd /DwollaWeatherApp/resources
 4. Compile the file WeatherCommandLine.java using javac WeatherCommandLine.java
 5. Run the file using java WeatherCommandLine
